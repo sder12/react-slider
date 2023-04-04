@@ -4,17 +4,33 @@ import Slider from './components/Slider';
 import data from './data';
 
 const App = () => {
-  const [currentSlide, setCurrentSlide] = useState(1);
-  const [showSlide, setShowSlide] = useState(data[0]);
-  console.log(showSlide)
-  useEffect(() => {
-    data.map((el) => {
-      if (el.id === currentSlide) {
-        console.log(el.autore)
-      }
-    });
-  }, []);
+  //DATA
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [showSlide, setShowSlide] = useState(data[currentSlide]);
+  const arrayLength = data.length //4
 
+  //FUNCTION
+  const slideForward = () => {
+    if (currentSlide < arrayLength - 1) {
+      setCurrentSlide(currentSlide + 1);
+    }
+    else {
+      setCurrentSlide(0);
+    }
+    setShowSlide(data[currentSlide]);
+  }
+
+  const slideBackward = () => {
+    if (currentSlide === 0) {
+      setCurrentSlide(arrayLength - 1);
+    }
+    else {
+      setCurrentSlide(currentSlide - 1);
+    }
+    setShowSlide(data[currentSlide]);
+  }
+
+  //COMPONENT
   return (
     <div className="container pt-5">
       {/* Title */}
@@ -28,7 +44,7 @@ const App = () => {
       </div>
 
       {/* Slider */}
-      <Slider />
+      <Slider slideForward={slideForward} slideBackward={slideBackward} />
     </div>
   )
 }
