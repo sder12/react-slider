@@ -5,7 +5,7 @@ const Slide = (slide) => {
         <section className="card">
             {/* Image */}
             <div className="card-image">
-                <figure class="image is-4by3">
+                <figure className="image is-4by3">
                     <img src="https://picsum.photos/300/300" alt="Placeholder image" />
                 </figure>
             </div>
@@ -16,7 +16,7 @@ const Slide = (slide) => {
                 <div className="media">
                     <div className="media-left">
                         <figure className="image is-48x48">
-                            <img src="https://i.pinimg.com/564x/56/79/0d/56790d50e7c7a286d57fde5637a346b7.jpg"></img>
+                            <img src={slide.avatar} />
                         </figure>
                     </div>
                     <div className="media-content">
@@ -29,12 +29,23 @@ const Slide = (slide) => {
                     {slide.recensione}
                     <a href="#">#bulma</a> <a href="#">#slider</a>
                     <br />
-                    <span> vote {slide.voto} / 5</span>
+                    <div className="mt-4">
+                        {[...Array(slide.voto)].map((star) => {
+                            return (
+                                <i className="fa-solid fa-star" />
+                            );
+                        })}
+                        {[...Array((5 - slide.voto))].map((star) => {
+                            return (
+                                <i className="fa-regular fa-star" />
+                            );
+                        })}
+                    </div>
                     <br />
-                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                    <div>11:09 PM - 1 Jan 2016</div>
                 </div>
             </div>
-        </section>
+        </section >
     )
 }
 
