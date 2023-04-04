@@ -14,4 +14,4 @@ Slider with <a href="https://react.dev/"> React </a> & <a href="https://bulma.io
 
 
 <br/>
-<img src="./public/react-slider-screenshot.png" alt="html" width="70%" /> 
+<img src="./public/react-slider-screenshot.png" alt="html" /> 
