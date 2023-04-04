@@ -16,21 +16,19 @@ const App = () => {
   }, []);
 
   return (
-    <div className="App section-center">
+    <div className="container pt-5">
+      {/* Title */}
+      <h1 className="title has-text-centered">Our vacation</h1>
 
-      <h2>Our vacation</h2>
-
-      <div className="container slider">
-        <div className="review">
-          {/* {
-            data.map((el) => {
-              return <Slide key={el.id} {...el} />
-            })
-          } */}
+      {/* Slide */}
+      <div className="columns">
+        <div className="column is-half is-offset-one-quarter">
           <Slide key={showSlide.id} {...showSlide} />
-          <Slider />
         </div>
       </div>
+
+      {/* Slider */}
+      <Slider />
     </div>
   )
 }

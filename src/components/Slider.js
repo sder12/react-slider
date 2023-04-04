@@ -3,14 +3,18 @@ import React from 'react'
 const Slider = () => {
 
     return (
-        <section className="btn-group slider-btn-group">
-            <button className="button is-primary">
-                prev
-            </button>
-            <button className="button is-primary" >
-                next
-            </button>
-        </section>
+        <div className="columns is-centered is-6">
+            <div className='column is-flex is-justify-content-end'>
+                <button className="button is-primary" >
+                    PREV
+                </button>
+            </div>
+            <div className='column is-flex is-justify-content-start'>
+                <button className="button is-primary">
+                    NEXT
+                </button>
+            </div>
+        </div>
     )
 }
 
