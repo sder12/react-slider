@@ -4,12 +4,12 @@ const Slider = () => {
 
     return (
         <section className="btn-group slider-btn-group">
-            <div className="btn btn-slider prev-slid">
+            <button className="button is-primary">
                 prev
-            </div>
-            <div className="btn btn-slider next-slide" >
+            </button>
+            <button className="button is-primary" >
                 next
-            </div>
+            </button>
         </section>
     )
 }
